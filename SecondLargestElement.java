@@ -2,6 +2,12 @@ public class SecondLargestElement {
     public static int secondLargestElement(int[] nums) {
         int len = nums.length;
         int max= 0;
+
+        if (len < 2) {
+            // Indicating no second largest element is possible
+            return -1; 
+        }
+        
         for(int i=0; i<len; i++){
             if(nums[i]>max) max = nums[i];
         }
