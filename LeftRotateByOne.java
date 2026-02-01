@@ -4,15 +4,22 @@ public class LeftRotateByOne {
         rotateArrayByOne(nums);
     }
     public static void rotateArrayByOne(int[] nums) {
+    if (nums == null || nums.length <= 1) return;
 
-        for(int i=1; i<nums.length; i++){
-            int temp=nums[i-1];
-            nums[i-1]=nums[i];
-            nums[i]=temp;
-        }
-        
-        for(int i=0; i<nums.length; i++){
-            System.out.print(" "+ nums[i] +" ");
-        }
+    // 1. Store the first element
+    int first = nums[0];
+
+    // 2. Shift all elements to the left by one
+    for (int i = 1; i < nums.length; i++) {
+        nums[i - 1] = nums[i];
     }
+
+    // 3. Place the first element at the last index
+    nums[nums.length - 1] = first;
+
+    // Print result
+    for (int num : nums) {
+        System.out.print(num + " ");
+    }
+}
 }
