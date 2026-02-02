@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class singleNoAppears {
     public static void main(String[] args){
