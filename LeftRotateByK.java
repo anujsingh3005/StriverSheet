@@ -4,18 +4,44 @@ public class LeftRotateByK {
         int k = 8;
         rotateArray(nums, k);
     }
+    // public static void rotateArray(int[] nums, int k) {
+    //     while(k>0){
+    //         for(int i=1; i<nums.length; i++){
+    //         int temp = 0;
+    //         temp = nums[i-1];
+    //         nums[i-1]=nums[i];
+    //         nums[i]=temp;
+    //     }
+    //     k--;
+    //     }
+    //     for(int i=0; i<nums.length;i++){
+    //         System.out.print(nums[i] + " ");
+    //     }
+    // }
+
+    //optimal
     public static void rotateArray(int[] nums, int k) {
-        while(k>0){
-            for(int i=1; i<nums.length; i++){
-            int temp = 0;
-            temp = nums[i-1];
-            nums[i-1]=nums[i];
-            nums[i]=temp;
-        }
-        k--;
-        }
+        int n = nums.length;
+        k = k % n;
+
+        if(n==0) return;
+        if(k==0) return;
+
+        reverse(nums, 0, k-1);
+        reverse(nums, k, n-1);
+        reverse(nums, 0, n-1);
+
         for(int i=0; i<nums.length;i++){
             System.out.print(nums[i] + " ");
+        }
+    }
+    public static void reverse(int [] nums, int start, int end){
+        while(start < end){
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
         }
     }
 }
