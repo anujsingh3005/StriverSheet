@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class FindMissingNo {
     public static void main(String[] args) {
         int[] nums = {0, 1, 2, 4, 5, 6};
