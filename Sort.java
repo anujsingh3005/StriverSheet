@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Sort {
     public static void main(String[] args) {
         int[] nums = {1, 2, 0, 0, 2, 1};  
