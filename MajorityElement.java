@@ -5,7 +5,7 @@ public class MajorityElement {
         System.out.println(k);
     }
     public static int majorityElement(int[] nums) {
-        int count = 1;
+        int count = 0;
         int element = 0;
 
         for(int i=0; i<nums.length;i++){
