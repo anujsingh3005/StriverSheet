@@ -8,7 +8,7 @@ public class KadanesAlgo_MaxOfSubArray {
         int sum = Integer.MIN_VALUE;
         int maxsum = 0;
         
-        for(int i=0; i<nums.length-1; i++){
+        for(int i=0; i<nums.length; i++){
             maxsum += nums[i];
             if(maxsum > sum) sum = maxsum;
             if(maxsum < 0) maxsum = 0;
