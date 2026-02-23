@@ -8,7 +8,9 @@ public class FindSqrt {
     }
 
     public static int floorSqrt(int n) {
-      int ans = -1, low=1, high=n;
+      int ans = -1, low=1, high=n/2;
+
+       if (n < 2) return n;
 
       while(low<=high){
         int mid = low + (high-low)/2;
