@@ -1,29 +1,31 @@
 import java.util.*;
 
 public class KokoBanana {
-    private static int calculateTotalHours(int[] piles, int speed) {
-        int totalH = 0;
-        for (int bananas : piles) {
-            totalH += (int)Math.ceil((double)bananas / speed);
-        }
-        return totalH;
+    private static boolean canEat(int[] piles, int h, int k) {
+    long hours = 0;
+    for (int pile : piles) {
+        hours += (pile + k - 1) / k;  
     }
-    public static int minEatingSpeed(int[] piles, int h) {
-    
-        int maxPile = Arrays.stream(piles).max().getAsInt();
+    return hours <= h;
+}
 
-        int low = 1, high = maxPile;
-        int ans = maxPile;
+    public static int minEatingSpeed(int[] piles, int h) {
+
+    int low=1, high=0;
+    
+    for (int pile : piles) {
+        high = Math.max(high, pile);
+    }
+
+    int ans = high;
 
         while (low <= high) {
             int mid = (low + high) / 2;
-            int totalH = calculateTotalHours(piles, mid);
 
-            if (totalH <= h) {
+            if (canEat(piles,h, mid)) {
                 ans = mid;
                 high = mid - 1;
             }
-
             else {
                 low = mid + 1;
             }
