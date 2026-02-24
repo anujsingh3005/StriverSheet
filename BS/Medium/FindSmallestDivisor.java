@@ -14,21 +14,21 @@ public class FindSmallestDivisor {
        while(min <= max){
             mid = (min + max)/2;
 
-            boolean ans = check(nums, threshold, mid);
-            if(ans) {
+            int ans = check(nums, mid);
+            if(ans <= threshold) {
                 max = mid-1;
             }
             else min= mid+1;
        } 
        return min;
     }
-    public static boolean check(int[] nums, int threshold, int mid){
-        int count = 0;
+    public static int check(int[] nums, int mid){
+        int sum = 0;
         for(int items: nums){
-            count += Math.ceil((double) items / mid);
+            //made code optimal !!!!!
+            sum += (items + mid - 1)/mid;
         }
-        if(count <= threshold) return true;
-        return false;
+        return sum;
     }
 
     public static void main(String[] args) {
