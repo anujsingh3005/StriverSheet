@@ -5,7 +5,7 @@ public class bloomDay {
         int mid = -1;
         int n = bloomDay.length;
 
-        if(n < (m*k)) return -1;
+        if(n < ((long) m*k)) return -1;
 
        for(int item : bloomDay){
             if(item > max) max=item;
