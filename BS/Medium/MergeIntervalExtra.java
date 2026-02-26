@@ -7,8 +7,8 @@ public class MergeIntervalExtra {
         
         if(intervals.length <= 1) return intervals;
 
-        // Arrays.sort(intervals,(a,b)->a[0]-b[0]); //Integer compare operation in a[0]-b[0]
-        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+        Arrays.sort(intervals,(a,b)->a[0]-b[0]); //Integer compare operation in a[0]-b[0]
+        // Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
 
         List<int []> result = new ArrayList<>();
 
