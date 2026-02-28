@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class KokoBanana {
     private static boolean canEat(int[] piles, int h, int k) {
     long hours = 0;
